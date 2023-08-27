@@ -17,7 +17,7 @@ csv_filename = "Doctors_Comment_Dataset.csv"
 rabbitmq_host = 'localhost'
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
 channel = connection.channel()
-queue = "صف_گوش، حلق و بینی"
+queue = "صف_نازایی و ناباروری"
 queues = channel.queue_declare(queue=queue, passive=True)
 
 with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:

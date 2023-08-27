@@ -1,9 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import pika
 import json
@@ -13,7 +9,7 @@ exchange_name = 'doctor_data'
 connection = pika.BlockingConnection(pika.ConnectionParameters(rabbitmq_host,heartbeat=500))
 channel = connection.channel()
 channel.exchange_declare(exchange=exchange_name, exchange_type='direct')
-queue_name = "صف_گوش، حلق و بینی"
+queue_name = "صف_نازایی و ناباروری"
 channel.queue_declare(queue=queue_name, durable=True)
 channel.queue_bind(exchange=exchange_name, queue=queue_name, routing_key=queue_name)
 
@@ -24,7 +20,7 @@ options.add_argument("--headless")
 driver = webdriver.Firefox(options=options)
 actions = ActionChains(driver=driver)
 
-driver.get("https://drdr.ir/search/expertise-47/")
+driver.get("https://drdr.ir/search/expertise-10/?page=3")
 driver.maximize_window()
 sleep(10)
 
@@ -36,7 +32,7 @@ while(True):
         break
     except:
         doctors_list = driver.find_elements('xpath' , '//div[@class="attr"]//a')
-        ind_doctor = 0
+        ind_doctor = 2
         while ind_doctor < len(doctors_list):
             try:
                 doctors_list = driver.find_elements('xpath' , '//div[@class="attr"]//a')
@@ -98,7 +94,7 @@ while(True):
                         break
             driver.back()
         num_page += 1
-        str_link = "https://drdr.ir/search/expertise-47/?page="
+        str_link = "https://drdr.ir/search/expertise-10/?page="
         str_link += str(num_page)
         driver.get(str_link)
         print("new page")
