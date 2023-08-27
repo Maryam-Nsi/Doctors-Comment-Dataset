@@ -1,0 +1,7 @@
+selenium
+time
+pika
+json
+hazm
+transformers
+torch
