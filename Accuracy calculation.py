@@ -28,12 +28,22 @@ for index, (value_a, value_b) in enumerate(zip(column_a, column_b)):
 num_rows = df.shape[0]
 accuracy = (similarities / num_rows)*100
 kol = manfi + mosbat + khonsa
+darsadmanfia = (manfi / num_rows)*100
+darsadmosbata = (mosbat / num_rows)*100
+darsadkhonsaha = (khonsa / num_rows)*100
 
-print(f"manfi = {manfi}")
-print(f"mosbat = {mosbat}")
-print(f"khonsa = {khonsa}")
-print(f"jame hame = {kol}")
+
+# print(f"manfi = {manfi}")
+# print(f"mosbat = {mosbat}")
+# print(f"khonsa = {khonsa}")
+# print(f"jame hame = {kol}")
+
 print(f"Number of rows = {num_rows}")
-print(f"Number Of Differences = {differences}")
-print(f"Number Of similarities = {similarities}")
+
+print (f"darsad manfia = {darsadmanfia:.4f}")
+print (f"darsad mosbata = {darsadmosbata:.4f}")
+print (f"darsad khonsaha = {darsadkhonsaha:.4f}")
+
+# print(f"Number Of Differences = {differences}")
+# print(f"Number Of similarities = {similarities}")
 print(f"Accuracy = {accuracy:.4f}")
