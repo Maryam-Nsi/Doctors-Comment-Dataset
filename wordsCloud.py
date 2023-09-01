@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # stop_words.update(["است", "بود", "شد", "دکتر", "که", "و", "به", "هم"])
     #ﺮﺘﮐﺩ
 
-    stop_words.update(["است", "ﺩﻮﺑ", "شد", "ﺮﺘﮐﺩ", "ﻪﮐ", "ﻭ", "ﻪﺑ", "ﻢﻫ" , "ﺭﺩ", "ﺯﺍ", "ﺎﺑ" , "ﻭﺭ","ﯼﺍﺮﺑ"])
+    stop_words.update(["است", "ﺩﻮﺑ", "شد", "ﺮﺘﮐﺩ", "ﻪﮐ", "ﻭ", "ﻪﺑ", "ﻢﻫ" , "ﺭﺩ", "ﺯﺍ", "ﺎﺑ" , "ﻭﺭ","ﯼﺍﺮﺑ", "ﻦﻣ"])
 
     bidi_comments = get_display(arabic_reshaper.reshape(" ".join(df['comment'])))
 
@@ -22,8 +22,8 @@ if __name__ == "__main__":
     cmap = LinearSegmentedColormap.from_list("colors", colors)
 
 
-    wc = WordCloud(width=600,
-                   height=400,
+    wc = WordCloud(width=2000,
+                   height=1000,
                    random_state=1,
                    background_color='white',
                    colormap=cmap,

@@ -33,10 +33,10 @@ darsadmosbata = (mosbat / num_rows)*100
 darsadkhonsaha = (khonsa / num_rows)*100
 
 
-# print(f"manfi = {manfi}")
-# print(f"mosbat = {mosbat}")
-# print(f"khonsa = {khonsa}")
-# print(f"jame hame = {kol}")
+print(f"manfi = {manfi}")
+print(f"mosbat = {mosbat}")
+print(f"khonsa = {khonsa}")
+print(f"jame hame = {kol}")
 
 print(f"Number of rows = {num_rows}")
 
