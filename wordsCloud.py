@@ -37,6 +37,9 @@ if __name__ == "__main__":
     
     plt.rcParams['font.family'] = 'Mj_Ramollah'
     plt.figure(figsize=[5,5])
+    output_file_path = "wordcloud.png"
     plt.imshow(wc, interpolation="bilinear")
     plt.axis('off')
+    plt.savefig(output_file_path, bbox_inches='tight', dpi=300, format='png')
     plt.show()
+    
