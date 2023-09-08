@@ -5,3 +5,9 @@ json
 hazm
 transformers
 torch
+pandas
+csv
+numpy
+matplotlib
+bidi.algorithm
+arabic_reshaper
